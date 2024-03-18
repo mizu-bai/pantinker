@@ -12,7 +12,7 @@ read_tinker_log_return_type = Tuple[
 ]
 
 
-def read_tinker_log(
+def read_log(
     path: str,
 ) -> read_tinker_log_return_type:
     """Parse Tinker log and make contents available in Python.
@@ -102,10 +102,10 @@ def get_unit_dictionary(
     return unit_dict
 
 
-def tinker_log_to_dict(
+def log_to_dict(
     path: str,
 ) -> Dict[str, np.array]:
-    """Calls `read_tinker_log` and packs its return values into a dictionary.
+    """Calls `read_log` and packs its return values into a dictionary.
 
     Arguments:
         path (str): Path to Tinker log.
@@ -115,7 +115,7 @@ def tinker_log_to_dict(
             terms found in the Tinker log.
     """
 
-    all_energies, all_names, times = read_tinker_log(path)
+    all_energies, all_names, times = read_log(path)
 
     energy_dict = {}
 
@@ -125,9 +125,3 @@ def tinker_log_to_dict(
         )
 
     return energy_dict
-
-
-if __name__ == "__main__":
-    import sys
-
-    print(tinker_log_to_dict(sys.argv[1]))

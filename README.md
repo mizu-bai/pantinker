@@ -47,6 +47,10 @@ df = pantinker.log_to_df(path)
 unit_dict = pantinker.get_unit_dictionary(path)
 ```
 
+Visualization of properties
+
+[example.ipynb](https://github.com/mizu-bai/pantinker/blob/main/example/example.ipynb)
+
 ## Install
 
 Via `pip`
